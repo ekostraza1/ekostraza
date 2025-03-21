@@ -1,0 +1,19 @@
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+
+// Funkcija za prikaz sljedeće slike
+function nextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+}
+
+// Funkcija za prikaz prethodne slike
+function prevSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+}
+
+// Automatska promjena slika svakih 5 sekundi
+setInterval(nextSlide, 5000);
