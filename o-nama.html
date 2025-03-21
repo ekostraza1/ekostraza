@@ -62,12 +62,10 @@
             height: 100%;
             opacity: 0;
             transition: opacity 1s ease-in-out;
-            z-index: 0;
         }
 
         .slide.active {
             opacity: 1;
-            z-index: 1;
         }
 
         img {
@@ -78,16 +76,18 @@
     </style>
     
     <script>
-        let slides = document.querySelectorAll(".slide");
-        let currentSlide = 0;
+        document.addEventListener("DOMContentLoaded", function () {
+            let slides = document.querySelectorAll(".slide");
+            let currentSlide = 0;
     
-        function nextSlide() {
-            slides.forEach(slide => slide.classList.remove("active"));
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add("active");
-        }
+            function nextSlide() {
+                slides[currentSlide].classList.remove("active");
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add("active");
+            }
     
-        setInterval(nextSlide, 3000);
+            setInterval(nextSlide, 3000);
+        });
     </script>
     
     <div class="kosmomi">
