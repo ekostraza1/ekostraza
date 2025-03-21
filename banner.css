@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+#hero-banner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 550px;
+    background: url("../../img/banner1.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#project-box {
+    position: absolute;
+    top: 18%;
+    left: 5%;
+    width: 40%;
+    padding: 30px;
+    background: #f5f5dc; /* Bež pozadina */
+    border-radius: 0px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s, opacity 0.5s;
+    animation: fadeInUp 1s forwards;
+}
+
+#project-box h2 {
+    color: #556b2f; /* Maslinasto zeleni tekst */
+    font-size: 36px;
+    font-family: Poppins;
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+#project-box p {
+    color: #556b2f;
+    font-size: 18px;
+    font-family: Poppins;
+    margin-bottom: 10px;
+    text-align: lest;
+}
+
+#project-box .btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#project-box .btn {
+    display: inline-block;
+    font-family: Poppins;
+    font-weight: bold;
+    padding: 12px 25px;
+    color: #556b2f;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 18px;
+
+}
+
+#project-box .btn:hover {
+    color: rgb(85, 15, 15)
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#hero-banner .textArea {
+    text-align: center;
+    padding-top: 160px;
+    padding-bottom: 20px;
+}
+
+#hero-banner .textArea h1 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px black;
+}
+
+#hero-banner .textArea h1 .highlight {
+    color: #ffa500;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px black;
+}
+
+#hero-banner .textArea p {
+    color: #fff;
+    font-size: 20px;
+    width: 50%;
+    margin: auto;
+    text-shadow: 2px 2px 2px black;
+}
+
+#hero-banner .textArea .btn {
+    display: inline-block;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #57cb9b;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+#hero-banner .textArea .btn:hover {
+    background-color: #1f2024;
+}
+
+@media screen and (max-width: 1120px) {
+    #hero-banner .textArea {
+        padding-top: 120px;
+    }
+
+    #hero-banner .textArea h1 {
+        font-size: 44px;
+    }
+
+    #hero-banner .textArea p {
+        font-size: 16px;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #hero-banner .textArea {
+        padding-top: 100px;
+      }
+    #hero-banner .textArea p {
+        width: 80%;
+    }
+}
+
+#hero-banner2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 550px;
+    background: url("../../img/samoproba.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.text-overlay3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.044); /* Poluprozirna pozadina */
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 50px;
+}
+
+.container3 { 
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 100px;
+    background: #fffddb;
+    margin-left: 35px;
+}/*Ovo je za box o kojem je nasa biografija */
+
+.container3:hover{
+    transform: scale(1.05);  
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+transition: all 0.5s ease-in-out;
+}
+
+.container3 h2 {
+    color: #556b2f; /* Maslinasto zeleni tekst */
+    font-size: 20px;
+    font-family: Poppins;
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.slider {
+    width: 1920px; /* Širina boxa */
+    height: 450px; /* Visina boxa (prilagođena omjeru 16:9) */
+    overflow: hidden;
+    border: 2px solid #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin-top: 2px;
+}
+
+.slides {
+    display: flex;
+    width: 100%; /* Širina containera */
+    height: 100%;
+    transition: transform 0.9s ease-in-out; /* Animacija za promjenu slika */
+}
+
+.slide {
+    min-width: 100%; /* Svaka slika zauzima 100% širine containera */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Potrebno za pozicioniranje teksta */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Osigurava da slika pokriva cijeli prostor */
+}
+
+/* Stilovi za tekst "O nama" */
+.slide .about-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Stilovi za strelice */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
