@@ -169,12 +169,11 @@
     max-width: 800px;
     margin: 20px auto;
     padding: 30px;
-    background: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-right: 100px;
     background: #fffddb;
     margin-left: 35px;
+    color: #556b2f
 }/*Ovo je za box o kojem je nasa biografija */
 
 .container3:hover{
