@@ -76,25 +76,38 @@
             </div>  
         </div>
     </header>
-    <div class="slider">
-        <!-- Strelica za prethodnu sliku -->
-        <button class="arrow prev" onclick="prevSlide()">&#10094;</button>
+    <script>
+    <div>
+        // slider.js
 
-        <!-- Container za slike -->
-        <div class="slides">
-            <div class="slide">
-                <img src="img/slika1.png" alt="Slika 1">
-            </div>
-            <div class="slide">
-                <img src="img/slika2.png" alt="Slika 2">
-            </div>
-        </div>
+// Inicijalizacija varijabli
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
 
-        <!-- Strelica za sljedeću sliku -->
-        <button class="arrow next" onclick="nextSlide()">&#10095;</button>
+// Funkcija za prikaz trenutne slike
+function showSlide(index) {
+    // Sakrij sve slike
+    slides.forEach(slide => {
+        slide.style.display = 'none';
+    });
+
+    // Prikaži trenutnu sliku
+    slides[index].style.display = 'block';
+}
+
+// Funkcija za prelazak na sledeću sliku
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+}
+
+// Automatsko prebacivanje slika svakih 3 sekunde (3000 ms)
+setInterval(nextSlide, 3000);
+
+// Prikaz prve slike kada se stranica učita
+showSlide(currentSlide); 
     </div>
-
-    <!-- JavaScript skripta na kraju body taga -->
     <script>
         let currentSlide = 0;
         const slidesContainer = document.querySelector('.slides');
