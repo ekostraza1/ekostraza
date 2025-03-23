@@ -26,9 +26,8 @@
 }
 
 .news-updates article {
-    background-color: #fff;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    background-color: beige;
+    box-shadow: 2px 2px 1px rgba(71, 55, 26, 0.459);
     overflow: hidden;
 }
 
@@ -46,13 +45,13 @@
     font-size: 20px;
     font-family: Poppins, sans-serif;
     font-weight: bold;
-    color: #000;
-    margin-bottom: 10px;
+    color: olive;
+    margin-bottom: 15px;
 }
 
 .news-updates .article-container h2 {
     font-size: 14px;
-    color: #999;
+    color: #575757;
     margin-bottom: 10px;
 }
 
