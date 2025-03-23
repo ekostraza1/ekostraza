@@ -196,33 +196,23 @@
 
 .slides {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 550px;
-    background-size: cover;
-    background-position: center;
+    width: 100%; /* Širina containera */
+    height: 100%;
     transition: transform 0.9s ease-in-out; /* Animacija za promjenu slika */
 }
 
 .slide {
+    min-width: 100%; /* Svaka slika zauzima 100% širine containera */
+    height: 100%;
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 550px;
-    background-size: cover;
-    background-position: center;
     justify-content: center;
     align-items: center;
     position: relative; /* Potrebno za pozicioniranje teksta */
 }
 
 .slide img {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    height: 550px;
-    background-size: cover;
-    background-position: center;
+    height: 100%;
     object-fit: cover; /* Osigurava da slika pokriva cijeli prostor */
 }
 
