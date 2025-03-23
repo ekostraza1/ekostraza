@@ -165,17 +165,16 @@
     font-size: 50px;
 }
 
-.container3 { 
-    max-width: 800px;
-    margin: 20px auto;
+.container3 {
+    width: 100%;
+    max-width: 800px; 
+    margin: 20px auto; 
     padding: 30px;
-    margin-right: 100px;
     background: #fffddb;
-    margin-left: 35px;
     color: #556b2f;
     text-align: justify;
-    box-shadow: 2px 2px 1px rgba(71, 55, 26, 0.459); 
-}/*Ovo je za box o kojem je nasa biografija */
+    box-shadow: 2px 2px 1px rgba(71, 55, 26, 0.459);
+}
 
 .container3 h2 {
     color: #556b2f; /* Maslinasto zeleni tekst */
