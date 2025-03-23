@@ -42,7 +42,7 @@
 }
 
 .news-updates .article-container h1 {
-    font-size: 22x;
+    font-size: 22px;
     font-family: Poppins, sans-serif;
     font-weight: bold;
     color: rgb(22, 61, 0);
@@ -67,16 +67,14 @@
 }
 
 .news-updates .buttonArea .btn {
-    background-color: #346e34;
-    color: #fff;
+    color: #346e34;
     padding: 10px 20px;
-    border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s ease;
 }
 
 .news-updates .buttonArea .btn:hover {
-    background-color: #122c1a;
+    color: rgb(85, 15, 15);
 }
 
 @media screen and (min-width: 769px) {
