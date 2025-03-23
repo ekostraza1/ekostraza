@@ -167,7 +167,8 @@
 
 .container3 {
     width: 100%;
-    max-width: 100vw; 
+    max-width: 800px; 
+    justify-content: space-between;
     margin: 20px auto; 
     padding: 30px;
     background: #fffddb;
