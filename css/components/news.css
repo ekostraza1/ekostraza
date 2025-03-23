@@ -77,7 +77,7 @@
     text-decoration: none;
     transition: background-color 0.3s ease;
     font-weight: bold;
-    text-align: end;
+    text-align: right;
 }
 
 .news-updates .buttonArea .btn:hover {
