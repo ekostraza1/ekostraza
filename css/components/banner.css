@@ -173,7 +173,8 @@
     margin-right: 100px;
     background: #fffddb;
     margin-left: 35px;
-    color: #556b2f
+    color: #556b2f;
+    text-align: justify;
 }/*Ovo je za box o kojem je nasa biografija */
 
 .container3:hover{
