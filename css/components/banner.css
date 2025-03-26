@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* Obavezno dodati u HTML <head>:
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"> */
-
-#hero-banner, #hero-banner2 {
+#hero-banner {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 550px;
+    background: url("../../img/banner1.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -19,7 +17,7 @@
     left: 5%;
     width: 40%;
     padding: 30px;
-    background: #f5f5dc;
+    background: #f5f5dc; /* Bež pozadina */
     border-radius: 0px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s, opacity 0.5s;
@@ -27,7 +25,7 @@
 }
 
 #project-box h2 {
-    color: #556b2f;
+    color: #556b2f; /* Maslinasto zeleni tekst */
     font-size: 36px;
     font-family: Poppins;
     margin-bottom: 15px;
@@ -40,7 +38,7 @@
     font-size: 18px;
     font-family: Poppins;
     margin-bottom: 10px;
-    text-align: left;
+    text-align: lest;
 }
 
 #project-box .btn-container {
@@ -59,89 +57,67 @@
     border-radius: 8px;
     transition: background-color 0.3s, transform 0.3s;
     font-size: 18px;
+
 }
 
 #project-box .btn:hover {
-    color: rgb(85, 15, 15);
+    color: rgb(85, 15, 15)
 }
 
-.text-overlay3 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.044);
-    padding: 20px;
-    border-radius: 10px;
-    color: white;
-    font-size: 50px;
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.container3 {
-    width: 100%;
-    max-width: 48%;
-    justify-content: space-between;
-    margin: 20px auto;
-    padding: 30px;
-    background: #fffddb;
-    color: #556b2f;
-    text-align: justify;
-    box-shadow: 2px 2px 1px rgba(71, 55, 26, 0.459);
-}
-
-.container3 h2 {
-    color: #556b2f;
-    font-size: 24px;
-    font-family: Poppins;
-    margin-bottom: 15px;
-    text-align: left;
-    font-weight: bold;
-}
-
-.slider {
-    width: 100%;
-    height: 450px;
-    overflow: hidden;
-    position: relative;
-    margin-top: 2px;
-}
-
-.slides {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.9s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.slide .about-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#hero-banner .textArea {
     text-align: center;
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-    padding: 20px;
-    border-radius: 10px;
+    padding-top: 160px;
+    padding-bottom: 20px;
 }
 
-/* Responsive stilovi */
+#hero-banner .textArea h1 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px black;
+}
+
+#hero-banner .textArea h1 .highlight {
+    color: #ffa500;
+    font-size: 50px;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px black;
+}
+
+#hero-banner .textArea p {
+    color: #fff;
+    font-size: 20px;
+    width: 50%;
+    margin: auto;
+    text-shadow: 2px 2px 2px black;
+}
+
+#hero-banner .textArea .btn {
+    display: inline-block;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #57cb9b;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+#hero-banner .textArea .btn:hover {
+    background-color: #1f2024;
+}
+
 @media screen and (max-width: 1120px) {
     #hero-banner .textArea {
         padding-top: 120px;
@@ -158,84 +134,98 @@
 }
 
 @media screen and (max-width: 768px) {
-    #hero-banner, #hero-banner2 {
-        height: 400px;
-    }
-
-    #project-box {
-        width: 80%;
-        left: 10%;
-        top: 10%;
-        padding: 20px;
-    }
-
-    #project-box h2 {
-        font-size: 28px;
-    }
-
-    #project-box p {
-        font-size: 16px;
-    }
-
-    .container3 {
-        max-width: 90%;
-        padding: 20px;
-    }
-
-    .slider {
-        height: 300px;
-    }
-
-    .text-overlay3 {
-        font-size: 32px;
-        padding: 10px;
-    }
-
     #hero-banner .textArea {
-        padding-top: 80px;
-    }
-
-    #hero-banner .textArea h1 {
-        font-size: 32px;
-    }
-
+        padding-top: 100px;
+      }
     #hero-banner .textArea p {
-        width: 90%;
-        font-size: 14px;
+        width: 80%;
     }
 }
 
-@media screen and (max-width: 480px) {
-    #hero-banner, #hero-banner2 {
-        height: 350px;
-    }
-
-    #project-box {
-        width: 90%;
-        left: 5%;
-        padding: 15px;
-    }
-
-    #project-box h2 {
-        font-size: 24px;
-    }
-
-    .text-overlay3 {
-        font-size: 24px;
-    }
-
-    .slider {
-        height: 250px;
-    }
+#hero-banner2 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 550px;
+    background: url("../../img/samoproba.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.text-overlay3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.044); /* Poluprozirna pozadina */
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: 50px;
+}
+
+.container3 {
+    width: 100%;
+    max-width: 48%; 
+    justify-content: space-between;
+    margin: 20px auto; 
+    padding: 30px;
+    background: #fffddb;
+    color: #556b2f;
+    text-align: justify;
+    box-shadow: 2px 2px 1px rgba(71, 55, 26, 0.459);
+}
+
+.container3 h2 {
+    color: #556b2f; /* Maslinasto zeleni tekst */
+    font-size: 24px;
+    font-family: Poppins;
+    margin-bottom: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.slider {
+    width: 1920px; /* Širina boxa */
+    height: 450px; /* Visina boxa (prilagođena omjeru 16:9) */
+    overflow: hidden;
+    position: relative;
+    margin-top: 2px;
+}
+
+.slides {
+    display: flex;
+    width: 100%; /* Širina containera */
+    height: 100%;
+    transition: transform 0.9s ease-in-out; /* Animacija za promjenu slika */
+}
+
+.slide {
+    min-width: 100%; /* Svaka slika zauzima 100% širine containera */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Potrebno za pozicioniranje teksta */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Osigurava da slika pokriva cijeli prostor */
+}
+
+/* Stilovi za tekst "O nama" */
+.slide .about-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 10px;
 }

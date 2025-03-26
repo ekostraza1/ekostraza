@@ -25,34 +25,3 @@
     color: #fff;
     text-shadow: 2px 2px 2px black;
 }
-
-/* Responsive adjustments for mobile */
-@media screen and (max-width: 768px) {
-    .error {
-        top: 50px; /* Lower position for mobile */
-    }
-
-    .error .errorBox {
-        width: 90%; /* Wider box on small screens */
-        max-width: 300px; /* But never wider than original */
-    }
-
-    .error .errorBox h1 {
-        font-size: 20px; /* Slightly smaller text */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .error .errorBox {
-        border-radius: 12px; /* Smaller rounded corners */
-    }
-
-    .error .errorBox .container {
-        padding: 8px 15px; /* Tighter padding */
-    }
-
-    .error .errorBox h1 {
-        font-size: 18px; /* Even smaller text for tiny screens */
-        text-shadow: 1px 1px 1px black; /* Lighter shadow */
-    }
-}
