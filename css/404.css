@@ -4,17 +4,98 @@
 @import url('components/error-box.css');
 
 main {
-    height: 750px;
+    min-height: calc(100vh - 160px); /* Dynamic height based on viewport */
+    height: auto;
     display: flex;
     background: url("../img/bg.png");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed; /* Better parallax effect */
+    padding: 40px 20px; /* Added padding for mobile */
 }
+
 main .notFound {
     margin: auto;
     text-align: center;
+    width: 100%;
+    max-width: 1200px; /* Limit width for large screens */
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 main .notFound h1 {
     font-size: 150px;
     font-weight: bold;
+    color: #0a2c1c;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+main .notFound p {
+    font-size: 24px;
+    color: #435a4d;
+    margin-bottom: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+main .notFound .home-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #346e34;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid #346e34;
+}
+
+main .notFound .home-btn:hover {
+    background-color: transparent;
+    color: #346e34;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 992px) {
+    main .notFound h1 {
+        font-size: 120px;
+    }
+    
+    main .notFound p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        min-height: calc(100vh - 140px);
+        padding: 20px 15px;
+    }
+    
+    main .notFound {
+        padding: 30px 20px;
+    }
+    
+    main .notFound h1 {
+        font-size: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main .notFound h1 {
+        font-size: 80px;
+    }
+    
+    main .notFound p {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    
+    main .notFound .home-btn {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
 }

@@ -3,25 +3,38 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Header Styles */
 header {
     position: relative;
     width: 100%;
     height: 80px;
     background-color: #fffff9;
     box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
-    z-index: 1;
+    z-index: 1000; /* Increased for better stacking */
 }
+
 header .container {
     width: 90%;
+    max-width: 1200px; /* Added max-width for large screens */
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    height: 100%;
+}
+
+/* Logo Area */
+header .logoArea {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 header .logoArea img {
     width: 200px;
+    transition: opacity 0.3s ease;
 }
 
 header .logoArea img:hover {
@@ -45,17 +58,25 @@ header .logoArea .siteName h1 .highlight {
     font-weight: bold;
 }
 
+/* Navigation */
+header .navBar ul {
+    display: flex;
+    list-style: none;
+}
+
 header .navBar ul li {
-    display: inline-block;
-    margin: 0 5px;
+    margin: 0 15px; /* Increased spacing */
 }
 
 header .navBar ul li a {
-    color: #0a1f09 ;
+    color: #0a1f09;
     font-size: 16px;
     font-family: "Poppins", sans-serif;
-    font-weight: bold;
+    font-weight: 600; /* Slightly bolder */
     cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    position: relative;
 }
 
 header .navBar ul li a.active {
@@ -66,87 +87,53 @@ header .navBar ul li a:hover {
     color: #375c27;
 }
 
+/* Mobile Menu Button */
 header .menuArea {
     display: none;
+    z-index: 1001;
 }
 
-header .menuArea .menuBtn{
+header .menuArea .menuBtn {
     position: relative;
     width: 35px;
     height: 35px;
     cursor: pointer;
 }
+
 header .menuArea .menuBtn span {
     background-color: rgb(52, 92, 47);
     width: 100%;
-    height: 5px;
+    height: 4px; /* Slightly thinner */
     border-radius: 5px;
     display: block;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
 }
 
-header .menuArea .menuBtn .line-1{
-    transform: translate(-50%, -13px);
+header .menuArea .menuBtn .line-1 {
+    transform: translate(-50%, -12px);
 }
 
-header .menuArea .menuBtn .line-3{
+header .menuArea .menuBtn .line-3 {
     transform: translate(-50%, 8px);
 }
 
-header .menuArea .menuBtn.openmenu .line-1{
+header .menuArea .menuBtn.openmenu .line-1 {
     transform: translate(-50%, -50%) rotate(-45deg);
 }
-header .menuArea .menuBtn.openmenu .line-3{
+
+header .menuArea .menuBtn.openmenu .line-3 {
     transform: translate(-50%, -50%) rotate(45deg);
 }
-header .menuArea .menuBtn.openmenu .line-2{
-    width: 0;
+
+header .menuArea .menuBtn.openmenu .line-2 {
+    opacity: 0;
 }
 
-@media screen and (max-width: 1120px) {
-    header .menuArea {
-        display: block;
-    }
-
-    header .logoArea .image {
-        display: none;
-    }
-
-    header .logoArea .siteName {
-        display: block;
-        width: 220px;
-    }
-
-    header .navBar {
-        width: 100%;
-        background-color: #19291c;
-        max-height: 0px;
-        overflow: hidden;
-        visibility: hidden;
-        transition: all 0.5s ease;
-    }
-
-    header .navBar.open {
-        visibility: visible;
-    }
-
-    header .navBar ul {
-        padding: 0 30px;
-    }
-
-    header .navBar ul li {
-        display: block;
-        margin: 15px 0;
-    }
-    header .navBar ul li a {
-        color: #fff;
-    }
-}
-
-
+/* Logo Animation */
 .logo-container {
     display: flex;
     justify-content: center;
@@ -159,31 +146,121 @@ header .menuArea .menuBtn.openmenu .line-2{
 }
 
 @keyframes rotateGlow {
-    0% {
-        transform: rotate(0deg);
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-45deg); }
+    50% { filter: drop-shadow(0 0 5px white); }
+    75% { filter: drop-shadow(0 0 5px rgb(0, 0, 0)); }
+    80% { filter: drop-shadow(0 0 5px rgb(0, 0, 0)); }
+    85% { filter: drop-shadow(0 0 5px rgb(0, 0, 0)); }
+    87% { filter: drop-shadow(0 0 5px rgb(0, 0, 0)); }
+    90% { filter: drop-shadow(0 0 5px rgb(255, 255, 255)); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1120px) {
+    header {
+        height: auto;
+        min-height: 80px;
+        padding: 15px 0;
     }
-    25% {
-        transform: rotate(-45deg);
+
+    header .menuArea {
+        display: block;
+        order: 2; /* Moves to right side */
     }
-    50% {
-        filter: drop-shadow(0 0 5px white);
+
+    header .logoArea {
+        order: 1; /* Moves to left side */
     }
-    75% {
-        filter: drop-shadow(0 0 5px rgb(0, 0, 0));
+
+    header .logoArea .image {
+        display: none;
     }
-    80% {
-        filter: drop-shadow(0 0 5px rgb(0, 0, 0));
+
+    header .logoArea .siteName {
+        display: block;
+        width: auto;
+        min-width: 220px;
     }
-    85% {
-        filter: drop-shadow(0 0 5px rgb(0, 0, 0));
+
+    header .navBar {
+        width: 100%;
+        background-color: #19291c;
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transition: all 0.5s ease;
+        order: 3; /* Moves below */
     }
-    87% {
-        filter: drop-shadow(0 0 5px rgb(0, 0, 0));
+
+    header .navBar.open {
+        visibility: visible;
+        max-height: 500px; /* Adjust based on content */
+        padding: 20px 0;
     }
-    90% {
-        filter: drop-shadow(0 0 5px rgb(255, 255, 255));
+
+    header .navBar ul {
+        flex-direction: column;
+        padding: 0 30px;
     }
-    100% {
-        transform: rotate(0deg);
+
+    header .navBar ul li {
+        display: block;
+        margin: 15px 0;
+    }
+
+    header .navBar ul li a {
+        color: #fff;
+        font-size: 18px; /* Larger for touch */
+        display: block;
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header .container {
+        width: 95%;
+    }
+
+    header .logoArea .siteName h1 {
+        font-size: 24px;
+        line-height: 50px;
+    }
+
+    header .logoArea .siteName h1 .highlight {
+        font-size: 24px;
+    }
+
+    #logo {
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header .logoArea .siteName {
+        min-width: auto;
+    }
+
+    header .logoArea .siteName h1 {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    header .logoArea .siteName h1 .highlight {
+        font-size: 20px;
+    }
+
+    #logo {
+        width: 150px;
+    }
+
+    header .menuArea .menuBtn {
+        width: 30px;
+        height: 30px;
+    }
+
+    header .navBar ul li a {
+        font-size: 16px;
     }
 }

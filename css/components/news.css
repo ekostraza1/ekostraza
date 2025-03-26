@@ -1,62 +1,80 @@
 .news-updates {
     width: 100%;
     margin-bottom: 40px;
+    padding: 0 15px; /* Added padding for mobile */
 }
 
 .news-updates h2 {
     color: #0a2c1c;
     font-size: 32px;
     font-weight: bold;
-    font-family: Open Sans, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 10px;
+    text-align: center; /* Center align on all devices */
 }
 
-.news-updates p {
+.news-updates p.subtitle {
     color: #435a4d;
     font-size: 16px;
     font-weight: bold;
-    font-family: Open Sans, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     margin-bottom: 20px;
+    text-align: center; /* Center align on all devices */
+    max-width: 800px; /* Limit width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
 }
 
 .news-updates .article-area {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
+    gap: 25px; /* Increased gap for better spacing */
+    max-width: 1200px; /* Added max-width for large screens */
+    margin: 0 auto; /* Center the grid */
 }
 
 .news-updates article {
-    background-color: beige;
-    box-shadow: 2px 2px 1px rgba(71, 55, 26, 0.459);
+    background-color: #fffff9; /* Slightly off-white */
+    box-shadow: 0 3px 10px rgba(71, 55, 26, 0.15);
     overflow: hidden;
+    border-radius: 8px; /* Added rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-updates article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(71, 55, 26, 0.25);
 }
 
 .news-updates article img {
     width: 100%;
-    height: auto;
+    height: 200px; /* Fixed height for consistency */
     object-fit: cover;
 }
 
 .news-updates .article-container {
-    padding: 16px;
+    padding: 20px;
 }
 
 .news-updates .article-container h1 {
     font-size: 22px;
-    font-family: Poppins, sans-serif;
-    font-weight: bold;
-    color: rgb(22, 61, 0);
-    margin-bottom: 5px;
-    margin-left: 15px;
-    margin-right: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Slightly less bold */
+    color: #163d00;
+    margin-bottom: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    line-height: 1.3;
 }
 
 .news-updates .article-container h2 {
     font-size: 14px;
     color: #575757;
     margin-bottom: 15px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: 500;
 }
 
 .news-updates .article-container p {
@@ -64,30 +82,82 @@
     font-weight: normal;
     color: #333;
     margin-bottom: 20px;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin-left: 0;
+    margin-right: 0;
+    line-height: 1.6;
 }
 
 .news-updates .buttonArea {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px; /* Increased margin */
 }
 
 .news-updates .buttonArea .btn {
     color: #346e34;
-    padding: 10px 20px;
+    padding: 12px 25px; /* Larger click area */
     text-decoration: none;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    border: 2px solid #346e34;
+    border-radius: 30px; /* Pill shape */
+    display: inline-block;
 }
 
 .news-updates .buttonArea .btn:hover {
-    color: rgb(85, 15, 15);
-    font-weight: bold;
+    color: white;
+    background-color: #346e34;
+    font-weight: 600;
 }
 
-@media screen and (min-width: 769px) {
+/* Responsive Grid Layout */
+@media screen and (min-width: 600px) {
     .news-updates .article-area {
         grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .news-updates article img {
+        height: 250px; /* Taller images on tablets */
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .news-updates .article-area {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .news-updates {
+        margin-bottom: 60px; /* More space on desktop */
+    }
+    
+    .news-updates h2 {
+        font-size: 36px; /* Larger heading */
+        margin-bottom: 15px;
+    }
+    
+    .news-updates p.subtitle {
+        font-size: 18px; /* Larger subtitle */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .news-updates {
+        padding: 0 10px;
+        margin-bottom: 30px;
+    }
+    
+    .news-updates h2 {
+        font-size: 28px; /* Slightly smaller heading */
+    }
+    
+    .news-updates article img {
+        height: 180px; /* Slightly shorter images */
+    }
+    
+    .news-updates .article-container {
+        padding: 15px;
+    }
+    
+    .news-updates .article-container h1 {
+        font-size: 20px;
     }
 }

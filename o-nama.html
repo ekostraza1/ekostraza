@@ -1,124 +1,165 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="bs">
+
 <head>
     <meta charset="utf-8">
     <title>Eko Straža — O nama</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Saznajte više o Eko Straži - našoj misiji i projektu zaštite šuma">
     <link rel="icon" type="image/x-icon" href="img/logo.ico">
-    <link rel="icon" type="image/x-icon" href="logo.ico">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@400;700&display=swap" as="style">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style">
+
     <!-- GOOGLE FONTS CSS -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Open+Sans:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
     <!-- FONT AWESOME CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <!-- FLATICON CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flaticon/2.1.3/css/flaticon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="css/home.css">
 </head>
+
 <body>
     <header>
         <div class="container">
             <div class="logoArea">
-                <a href="index.html" class="image"><img src="./img/logo2.png"></a>
-                <a href="index.html" class="siteName">
-                    <h1><span>Eko Straža</span></h1>
+                <a href="index.html" class="image" aria-label="Početna stranica">
+                    <img src="./img/logo2.png" alt="Eko Straža logo" width="200" height="60" loading="eager">
+                </a>
+                <a href="index.html" class="siteName" aria-label="Početna stranica">
+                    <h1>Eko Straža</h1>
                 </a>
             </div>
-            <div class="menuArea">
+            <button class="menuArea" aria-label="Meni" aria-expanded="false">
                 <div class="menuBtn">
                     <span class="line-1"></span>
                     <span class="line-2"></span>
                     <span class="line-3"></span>
                 </div>
-            </div>
-            <div class="navBar" style="display: flex; align-items: center; justify-content: space-between; padding: 10px;">
-                <div style="display: flex; align-items: center;">
-                    <ul style="display: flex; list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-right: 20px;"><a href="index.html"><i class="fa-duotone fa-solid fa-house"></i> Naslovna</a></li>
-                        <li style="margin-right: 20px;"><a href="o-nama.html" class="active"><i class="fa-solid fa-layer-group"></i> O nama</a></li>
-                        <li style="margin-right: 20px;"><a href="#"><i class="fa-solid fa-bullhorn"></i> Novosti</a></li>
-                        <li style="margin-right: 20px;"><a href="#"><i class="fa-solid fa-file"></i> Projekti</a></li>
-                    </ul>
-                    <div style="border-left: 2px solid #000; height: 20px; margin: 0 10px;"></div>
-                </div>
-                <div style="display: flex;">
-                    <ul style="display: flex; list-style: none; padding: 0; margin: 0;">
-                        <li style="margin-right: 20px;">
-                            <a href="#" onclick="kopirajEmail()">
-                                <i class="fa-solid fa-ticket"></i> Kontaktirajte nas
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <script>
-                    function kopirajEmail() {
-                        const email = "kontakt.ekostraza@gmail.com";
-                        navigator.clipboard.writeText(email)
-                            .then(() => {
-                                alert("E-mail adresa: " + email + " je uspješno kopirana.");
-                            })
-                            .catch(err => {
-                                console.error("Greška pri kopiranju: ", err);
-                            });
-                    }
-                </script>
-            </div>  
+            </button>
+            <nav class="navBar" aria-label="Glavna navigacija">
+                <ul class="main-nav">
+                    <li><a href="index.html"><i class="fas fa-home" aria-hidden="true"></i> Naslovna</a></li>
+                    <li><a href="o-nama.html" class="active"><i class="fas fa-layer-group" aria-hidden="true"></i> O nama</a></li>
+                    <li><a href="#"><i class="fas fa-bullhorn" aria-hidden="true"></i> Novosti</a></li>
+                    <li><a href="#"><i class="fas fa-file" aria-hidden="true"></i> Projekti</a></li>
+                    <li class="nav-divider" aria-hidden="true"></li>
+                    <li><a href="#" class="contact-btn" onclick="kopirajEmail(event)"><i class="fas fa-envelope" aria-hidden="true"></i> Kontaktirajte nas</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
-    <div class="slider">
-        <!-- Container za slike -->
+
+    <section class="slider" aria-label="Galerija slika">
         <div class="slides">
             <div class="slide">
-                <img src="img/slika1.png" alt="Slika 1">
+                <img src="img/slika1.png" alt="Učenici Eko Straže u akciji" width="1920" height="1080" loading="lazy">
             </div>
             <div class="slide">
-                <img src="img/slika2.png" alt="Slika 2">
+                <img src="img/slika2.png" alt="Šumska staništa koja štitimo" width="1920" height="1080" loading="lazy">
             </div>
         </div>
-        <!-- Strelica za sljedeću sliku -->
+        <button class="slider-prev" aria-label="Prethodna slika" onclick="prevSlide()">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-next" aria-label="Sljedeća slika" onclick="nextSlide()">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </section>
+
+    <div class="construction-banner" role="alert">
+        <h2>Stranica je u izradi! Neke od prikazanih funkcija možda još uvijek nisu dostupne.</h2>
     </div>
-    <!-- JavaScript skripta na kraju body taga -->
+
+    <main class="about-container">
+        <section class="about-section" aria-labelledby="about-heading">
+            <h2 id="about-heading">KO SMO MI</h2>
+            <p>Mi smo učenici III razreda Matematičko-Informatičke gimnazije Srednje Škole Konjic. U sklopu projekta "Građanin" koji pokriva Civitas BiH želimo da ukažemo na ozbiljan problem nelegalne sječe šuma i važnost donošenja adekvatnih zakona za njihovu zaštitu. Kroz zajednički rad, istraživanje i timsku saradnju, trudimo se podići svijest o ekološkim problemima i promovisati odgovorno upravljanje prirodnim resursima. Naša misija je da kroz edukaciju, javne kampanje i konkretne prijedloge zakonskih rješenja, doprinesemo zaštiti šuma i očuvanju prirodnog bogatstva za sve nas.</p>
+        </section>
+
+        <section class="about-section" aria-labelledby="project-heading">
+            <h2 id="project-heading">O PROJKETU</h2>
+            <p>Naš projekat nastao je kao odgovor na rastući problem nelegalne sječe šuma i potrebu za donošenjem strožijih zakona koji će zaštititi prirodne resurse. Šume su jedan od najvažnijih ekosistema na našoj planeti – one proizvode kisik, čuvaju biodiverzitet i pomažu u borbi protiv klimatskih promjena.</p>
+            <p>Međutim, ilegalna sječa ozbiljno ugrožava ovu ravnotežu, uništavajući prirodna staništa i doprinosi degradaciji okoliša. Cilj našeg projekta je podizanje svijesti o problemu nelegalne sječe šuma kroz edukaciju, istraživanja i zagovaranje strožijih zakona. Također, radimo na kreiranju konkretnih prijedloga zakonskih rješenja koja bi osigurala održivo gospodarenje šumama i spriječila dalje uništavanje prirodnih resursa.</p>
+            <p>Vjerujemo da zajedničkim naporima možemo zaštititi naše šume i osigurati njihovu dugoročnu održivost za buduće generacije. Naša misija je da kroz edukaciju, javne kampanje i konkretne prijedloge zakonskih rješenja doprinesemo zaštiti šuma i očuvanju prirodnog bogatstva za buduće generacije.</p>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
     <script>
+        // Enhanced slider functionality
         let currentSlide = 0;
-        const slidesContainer = document.querySelector('.slides');
         const slides = document.querySelectorAll('.slide');
         const totalSlides = slides.length;
-        // Funkcija za prikaz sljedeće slike
+        let slideInterval;
+
+        function showSlide(index) {
+            if (index >= totalSlides) currentSlide = 0;
+            else if (index < 0) currentSlide = totalSlides - 1;
+            else currentSlide = index;
+
+            document.querySelector('.slides').style.transform = 
+                `translateX(-${currentSlide * 100}%)`;
+        }
+
         function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlider();
+            showSlide(currentSlide + 1);
+            resetInterval();
         }
-        // Funkcija za prikaz prethodne slike
+
         function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateSlider();
+            showSlide(currentSlide - 1);
+            resetInterval();
         }
-        // Funkcija za ažuriranje pozicije slajdera
-        function updateSlider() {
-            const offset = -currentSlide * 100; // Pomak za trenutnu sliku
-            slidesContainer.style.transform = `translateX(${offset}%)`;
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
         }
-        // Automatsko pokretanje slika svakih 5 sekundi
-        setInterval(nextSlide, 5000);
+
+        // Enhanced email copy function
+        function kopirajEmail(event) {
+            event.preventDefault();
+            const email = "kontakt.ekostraza@gmail.com";
+            
+            navigator.clipboard.writeText(email)
+                .then(() => {
+                    const originalText = event.target.innerHTML;
+                    event.target.innerHTML = '<i class="fas fa-check"></i> Email kopiran!';
+                    
+                    setTimeout(() => {
+                        event.target.innerHTML = originalText;
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error("Greška pri kopiranju: ", err);
+                    window.location.href = "mailto:" + email;
+                });
+        }
+
+        // Initialize slider
+        document.addEventListener("DOMContentLoaded", function() {
+            slideInterval = setInterval(nextSlide, 5000);
+            
+            // Load footer
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-container").innerHTML = data;
+                })
+                .catch(error => {
+                    console.error("Greška pri učitavanju footera:", error);
+                    document.getElementById("footer-container").innerHTML = `
+                        <footer class="footer-error">
+                            <p>Nije moguće učitati footer. <a href="index.html">Osvežite stranicu</a></p>
+                        </footer>
+                    `;
+                });
+        });
     </script>
-    <div style="background-color: #d38c2e; color: #F5F5DC; text-align: center; padding: 15px; border-radius: 0px; margin-top: 10px; font-family: 'Poppins', sans-serif">
-        <h2 style="margin: 0; font-size: 16px;">Stranica je u izradi! Neke od prikazanih funkcija možda još uvijek nisu dostupne.</h2>
-    </div>
-<div class="container3">
-       <h2>KO SMO MI</h2>
-      <p>Mi smo učenici III razreda Matematičko-Informatičke gimnazije Srednje Škole Konjic. U sklopu projekta "Građanin" koji pokriva Civitas BiH želimo da ukažemo na ozbiljan problem nelegalne sječe šuma i važnost donošenja adekvatnih zakona za njihovu zaštitu. Kroz zajednički rad, istraživanje i timsku saradnju, trudimo se podići svijest o ekološkim problemima i promovisati odgovorno upravljanje prirodnim resursima. Naša misija je da kroz edukaciju, javne kampanje i konkretne prijedloge zakonskih rješenja, doprinesemo zaštiti šuma i očuvanju prirodnog bogatstva za sve nas.</p>
-    </div>
-    </script>
-    <div class="container3">
-        <h2>O PROJKETU</h2>
-       <p>Naš projekat nastao je kao odgovor na rastući problem nelegalne sječe šuma i potrebu za donošenjem strožijih zakona koji će zaštititi prirodne resurse. Šume su jedan od najvažnijih ekosistema na našoj planeti – one proizvode kisik, čuvaju biodiverzitet i pomažu u borbi protiv klimatskih promjena. Međutim, ilegalna sječa ozbiljno ugrožava ovu ravnotežu, uništavajući prirodna staništa i doprinosi degradaciji okoliša. Cilj našeg projekta je podizanje svijesti o problemu nelegalne sječe šuma kroz edukaciju, istraživanja i zagovaranje strožijih zakona. Također, radimo na kreiranju konkretnih prijedloga zakonskih rješenja koja bi osigurala održivo gospodarenje šumama i spriječila dalje uništavanje prirodnih resursa. Vjerujemo da zajedničkim naporima možemo zaštititi naše šume i osigurati njihovu dugoročnu održivost za buduće generacije.Naša misija je da kroz edukaciju, javne kampanje i konkretne prijedloge zakonskih rješenja doprinesemo zaštiti šuma i očuvanju prirodnog bogatstva za buduće generacije.</p>
-     </div>
-
-     <div id="footer-container"></div>
-     <script src="js/footer.js"></script>
-
-
+    <script src="js/navbar.js" defer></script>
 </body>
-</html>   
+</html>

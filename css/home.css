@@ -10,39 +10,92 @@
 main {
     width: 100%;
     max-width: 1920px;
+    min-height: calc(100vh - 200px); /* Dynamic height accounting for header/footer */
     height: auto;
-    margin: auto;
-    margin-top: 40px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 main .main-container {
     width: 85%;
-    margin: auto;
-    display: block;
+    margin: 0 auto;
+    display: grid;
     grid-template-columns: 70% 25%;
     column-gap: 5%;
+    row-gap: 40px;
+    padding: 20px 0;
 }
 
-@media screen and (max-width: 1120px) {
-    main .main-container {
-        width: 95%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    main .main-container {
-        grid-template-columns: 100%;
-    }
-}
-
+/* Form Select Styling */
 .form-select.disableCaret {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: none;
     cursor: pointer;
-  }
-  
-  .form-select.disableCaret::-ms-expand {
+    padding-right: 15px; /* Ensure proper spacing */
+}
+
+.form-select.disableCaret::-ms-expand {
     display: none;
-  }
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+    main .main-container {
+        width: 90%;
+        column-gap: 4%;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    main .main-container {
+        width: 95%;
+        grid-template-columns: 65% 30%;
+        column-gap: 5%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    main {
+        padding: 0 15px;
+        margin-top: 30px;
+    }
+    
+    main .main-container {
+        grid-template-columns: 100%;
+    }
+    
+    aside {
+        order: 2; /* Move sidebar below content */
+        margin-top: 40px;
+    }
+    
+    .content-area {
+        order: 1;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        min-height: calc(100vh - 180px);
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+    
+    main .main-container {
+        width: 100%;
+        row-gap: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    main {
+        padding: 0;
+    }
+    
+    main .main-container {
+        padding: 15px;
+    }
+}
